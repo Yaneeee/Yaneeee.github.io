@@ -17,7 +17,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"loveorienteering.top","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"loveorienteering.top","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
   <meta name="description" content="继上一篇讲解如何在PurplePen中设置接力赛线路，分步演示一下如何进行线路分配">
@@ -223,6 +223,27 @@
             </span>
 
           
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>539</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
 
         </div>
       </header>
@@ -242,16 +263,16 @@
 <h5 id="三、实现步骤"><a href="#三、实现步骤" class="headerlink" title="三、实现步骤"></a>三、实现步骤</h5><h6 id="（一）设计好的接力赛线路"><a href="#（一）设计好的接力赛线路" class="headerlink" title="（一）设计好的接力赛线路"></a>（一）设计好的接力赛线路</h6><p>参照上期推送：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/Jg-7Sy0Q1WIiu9ckBZDrug">软件使用|Purple Pen中制作接力赛的方法</a></p>
 <p><img src="/img/00%20%E5%88%9D%E6%AD%A5%E8%AE%BE%E8%AE%A1%E5%A5%BD%E7%9A%84%E6%8E%A5%E5%8A%9B%E8%B5%9B%E7%BA%BF%E8%B7%AF.png" alt="初步设计好的接力赛线路"></p>
 <h6 id="（二）设置接力赛队伍数量和编号"><a href="#（二）设置接力赛队伍数量和编号" class="headerlink" title="（二）设置接力赛队伍数量和编号"></a>（二）设置接力赛队伍数量和编号</h6><p>路径：<code>Course - Relay Team Variations</code></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Number of teams 队伍数量</span><br><span class="line">Number of legs 棒次数量</span><br><span class="line">Team numbers start at 队伍起始编号</span><br></pre></td></tr></table></figure>
+<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Number</span> of teams 队伍数量</span><br><span class="line"><span class="keyword">Number</span> of legs 棒次数量</span><br><span class="line">Team numbers <span class="literal">start</span> at 队伍起始编号</span><br></pre></td></tr></table></figure>
 
 <p><img src="/img/01%20%E8%AE%BE%E7%BD%AE%E9%98%9F%E4%BC%8D%E6%95%B0%E9%87%8F%E5%92%8C%E7%BC%96%E5%8F%B7.gif" alt="设置队伍数量和编号"></p>
 <p><img src="/img/02%20%E8%AE%BE%E7%BD%AE%E9%98%9F%E4%BC%8D%E6%95%B0%E9%87%8F%E5%92%8C%E7%BC%96%E5%8F%B7.png" alt="设置队伍数量和编号"></p>
 <h6 id="（三）设置线路信息"><a href="#（三）设置线路信息" class="headerlink" title="（三）设置线路信息"></a>（三）设置线路信息</h6><p>路径：<code>Add - Text - Insert Special Text</code> or <code>Add Special Item - Text - Insert Special Text </code></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Insert Special Text</span><br><span class="line">	∟ Relay Team 接力队伍编号</span><br><span class="line">	∟ Relay Leg 队伍棒次</span><br><span class="line">	∟ Course Variation 路线编号</span><br></pre></td></tr></table></figure>
+<figure class="highlight mathematica"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Insert</span> <span class="variable">Special</span> <span class="built_in">Text</span></span><br><span class="line">	∟ <span class="variable">Relay</span> <span class="variable">Team</span> 接力队伍编号</span><br><span class="line">	∟ <span class="variable">Relay</span> <span class="variable">Leg</span> 队伍棒次</span><br><span class="line">	∟ <span class="variable">Course</span> <span class="variable">Variation</span> 路线编号</span><br></pre></td></tr></table></figure>
 
 <p><img src="/img/02%20%E8%AE%BE%E7%BD%AE%E7%BA%BF%E8%B7%AF%E4%BF%A1%E6%81%AF.gif" alt="设置线路信息"></p>
 <h6 id="（四）导出-打印路线"><a href="#（四）导出-打印路线" class="headerlink" title="（四）导出/打印路线"></a>（四）导出/打印路线</h6><p>路径：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">导出图片格式：&#x27;File - Create Image Files&#x27;</span><br><span class="line">导出PDF格式：&#x27;File - Create PDFs - Courses&#x27;</span><br><span class="line">打印：&#x27;Ctrl + P&#x27; or &#x27;File - Print Courses&#x27;</span><br></pre></td></tr></table></figure>
+<figure class="highlight mathematica"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">导出图片格式：<span class="operator">&#x27;</span><span class="built_in">File</span> <span class="operator">-</span> <span class="variable">Create</span> <span class="built_in">Image</span> <span class="variable">Files</span><span class="operator">&#x27;</span></span><br><span class="line">导出<span class="built_in">PDF</span>格式：<span class="operator">&#x27;</span><span class="built_in">File</span> <span class="operator">-</span> <span class="variable">Create</span> <span class="variable">PDFs</span> <span class="operator">-</span> <span class="variable">Courses</span><span class="operator">&#x27;</span></span><br><span class="line">打印：<span class="operator">&#x27;</span><span class="variable">Ctrl</span> <span class="operator">+</span> <span class="variable">P</span><span class="operator">&#x27;</span> <span class="variable">or</span> <span class="operator">&#x27;</span><span class="built_in">File</span> <span class="operator">-</span> <span class="built_in">Print</span> <span class="variable">Courses</span><span class="operator">&#x27;</span></span><br></pre></td></tr></table></figure>
 
 <p><img src="/img/03%20%E5%AF%BC%E5%87%BA%E8%B7%AF%E7%BA%BF%E6%96%87%E4%BB%B6.gif" alt="导出路线文件"></p>
 <p>（五）成果</p>
@@ -283,45 +304,6 @@
 
   </div>
 </div>
-
-        
-
-  <div class="followme">
-    <p>欢迎关注我的其它发布渠道</p>
-
-    <div class="social-list">
-
-        <div class="social-item">
-          <a target="_blank" class="social-link" href="https://twitter.com/airmondon">
-            <span class="icon">
-              <i class="fa fa-twitter"></i>
-            </span>
-
-            <span class="label">Twitter</span>
-          </a>
-        </div>
-
-        <div class="social-item">
-          <a target="_blank" class="social-link" href="https://t.me/airmondon">
-            <span class="icon">
-              <i class="fa fa-telegram"></i>
-            </span>
-
-            <span class="label">Telegram</span>
-          </a>
-        </div>
-
-        <div class="social-item">
-          <a target="_blank" class="social-link" href="/images/qrcode.jpg">
-            <span class="icon">
-              <i class="fa fa-wechat"></i>
-            </span>
-
-            <span class="label">WeChat</span>
-          </a>
-        </div>
-    </div>
-  </div>
 
 
       <footer class="post-footer">
@@ -471,11 +453,43 @@
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Yaneeee</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">1k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">1 分钟</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
 
         
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
 
 
 
